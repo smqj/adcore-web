@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:appContext-adcore-web.xml</param-value>
+  </context-param>
+  
+  <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <listener>
+		<listener-class>com.sogou.bizdev.muse.adcoreweb.app.web.MyContextLoaderListener</listener-class>
+	</listener>
+
+	<!--竞价广告操作-->
+	<servlet>
+		<servlet-name>CreateAdcoreController</servlet-name>
+		<servlet-class>com.sogou.bizdev.muse.adcoreweb.app.web.controller.CreateAdcoreController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>CreateAdcoreController</servlet-name>
+	    <url-pattern>/CreateAdcoreController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateAdcoreController</servlet-name>
+		<servlet-class>com.sogou.bizdev.muse.adcoreweb.app.web.controller.UpdateAdcoreController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>UpdateAdcoreController</servlet-name>
+	    <url-pattern>/UpdateAdcoreController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DeleteAdcoreController</servlet-name>
+		<servlet-class>com.sogou.bizdev.muse.adcoreweb.app.web.controller.DeleteAdcoreController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>DeleteAdcoreController</servlet-name>
+	    <url-pattern>/DeleteAdcoreController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdcoreListController</servlet-name>
+		<servlet-class>com.sogou.bizdev.muse.adcoreweb.app.web.controller.AdcoreListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>AdcoreListController</servlet-name>
+	    <url-pattern>/AdcoreListController</url-pattern>
+	</servlet-mapping>	 
+  <!--<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+  </filter>
+  <filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+  </filter-mapping>-->
+  
+   <welcome-file-list>
+  		<!--<welcome-file>/view/test.jsp</welcome-file>
+	   -->
+	   <welcome-file>/view/welcome.html</welcome-file>
+    </welcome-file-list>
+</web-app>
